@@ -1,0 +1,9 @@
+# Remove Visual Studio Configuration of project #
+.vscode
+
+# Remove all compiled Python modules #
+__pycache__
+
+# Remove all Python and HTML files for testing during development #
+/*.py
+/*.html
