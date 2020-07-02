@@ -7,3 +7,4 @@ __pycache__
 # Remove all Python and HTML files for testing during development #
 /*.py
 /*.html
+!test.py
