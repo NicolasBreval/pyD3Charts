@@ -19,6 +19,6 @@ def basic_chart(configuration, **kwargs):
     window = webview.create_window('', html=render_output)
     webview.start(debug='debug' in script_render_variables and script_render_variables['debug'] is True)
 
-def scatter_chart(data=None, title='', header='', offset=None, top=None, right=None, bottom=None, left=None, width=None, height=None, radius=None, fill=None, axis=None, tooltip=None, exportpath=None, debug=False):
+def scatter_chart(data=None, title='', header='', offset=None, top=None, right=None, bottom=None, left=None, width=None, height=None, radius=None, fill=None, axis=True, tooltip=True, exportpath=None, debug=False):
     render_variables = {key: value for key, value in locals().items() if value is not None}
     basic_chart((SCATTER, render_variables))
