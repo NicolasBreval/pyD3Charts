@@ -10,7 +10,7 @@
     <script>{% include "bootstrap.bundle.4.5.0.min.js" %}</script>
     <style>{% include "bootstrap.4.5.0.min.css" %}</style>
 </head>
-<body>
+<body style="background-color: {{ bodybackground|default('white') }};">
     <h1>{{ header|default('Chart', true) }}</h1>
     <div id="chart"></div>
     <script>

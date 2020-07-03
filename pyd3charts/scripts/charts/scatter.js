@@ -26,6 +26,7 @@ if (data.length > 0) {
       .append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
+        .style("background", "{{ background|default('white') }}")
       .append("g")
         .attr("transform",
               "translate(" + margin.left + "," + margin.top + ")");
