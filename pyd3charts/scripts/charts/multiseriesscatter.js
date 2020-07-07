@@ -126,7 +126,6 @@ if (data.length > 0) {
                 .attr("cx", function(d) { return x(d[0]) } )
                 .attr("cy", function(d) { return y(d[1]) } )
                 .attr("r", 5)
-                .attr("stroke", "white")
                 {% if tooltip %}
                 .on("mouseover", mouseover )
                 .on("mousemove", mousemove )
