@@ -21,6 +21,19 @@ def basic_chart(configuration, **kwargs):
 
 def scatter_chart(data=None, title='', header='', offset=None, top=None, right=None, bottom=None, left=None, width=None, height=None, radius=None, fill=None, background=None, bodybackground=None, axis=True, tooltip=True, exportpath=None, debug=False):
     render_variables = {key: value for key, value in locals().items() if value is not None}
+
+    all_x, all_y = list(zip(*data))
+
+    max_x = max(all_x)
+    min_x = min(all_x)
+    max_y = max(all_y)
+    min_y = min(all_y)
+
+    render_variables['max_x'] = max_x + (offset if offset is not None else 10)
+    render_variables['min_x'] = min_x - (offset if offset is not None else 10)
+    render_variables['max_y'] = max_y + (offset if offset is not None else 10)
+    render_variables['min_y'] = min_y - (offset if offset is not None else 10)
+
     basic_chart((SCATTER, render_variables, 'scatter'))
 
 def multiseries_scatter_chart(data=None, series_names=None, title='', header='', offset=None, top=None, right=None, bottom=None, left=None, width=None, height=None, radius=None, fill=None, background=None, bodybackground=None, axis=True, tooltip=True, exportpath=None, debug=False):

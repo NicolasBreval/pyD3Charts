@@ -3,12 +3,12 @@ var data = {{ data|default([], true) }};
 if (data.length > 0) {
     var limits = {
         x: {
-            max: Math.max.apply(null, data.map(function(d) { return  d[0]})) + {{ offset|default(10, true) }},
-            min: Math.min.apply(null, data.map(function(d) { return  d[0]})) - {{ offset|default(10, true) }}
+            max: {{ max_x }},
+            min: {{ min_x }}
         },
         y: {
-            max: Math.max.apply(null, data.map(function(d) { return  d[1]})) + {{ offset|default(10, true) }},
-            min: Math.min.apply(null, data.map(function(d) { return  d[1]})) - {{ offset|default(10, true) }}
+            max: {{ max_y }},
+            min: {{ min_y }}
         }
     };
 
