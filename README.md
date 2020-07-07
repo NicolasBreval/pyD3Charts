@@ -25,3 +25,13 @@ $ python test.py
 ```
 
 The test module creates a webview with a random scatter plot and outputs it at a single HTML file called *example.html* at root project path.
+
+## Examples
+Here are shown many examples of charts created with this library:
+
+### Simple scatter plot
+<img src="https://raw.githubusercontent.com/NicolasBreval/pyD3Charts/master/img/scatter_plot.png" alt="Example of simple scatter plot" title="Example of simple scatter plot" width="50%" height="50%"/>
+
+
+### Multi-series scatter plot
+<img src="https://raw.githubusercontent.com/NicolasBreval/pyD3Charts/master/img/multi_series_scatter_plot.png" alt="Example of multi-series scatter plot" title="Example of multi-series scatter plot" width="50%" height="50%"/>
