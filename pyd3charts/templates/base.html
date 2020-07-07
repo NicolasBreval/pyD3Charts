@@ -16,8 +16,8 @@
     <script>
         {% if scatter %}
             {% include "scatter.js" %}
-        {% elif category_scatter %}
-            {% include "category_scatter.js" %}
+        {% elif multiseries_scatter %}
+            {% include "multiseriesscatter.js" %}
         {% elif temporal_scatter %}
             {% include "temporal_scatter.js" %}
         {% endif %}
