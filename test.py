@@ -1,4 +1,5 @@
-from pyd3charts.base import scatter_chart, multiseries_scatter_chart
+from pyd3charts.base import scatter_chart, multiseries_scatter_chart, graph_chart
+from pyd3charts.graphs import Graph
 from random import randint
 
 ## Scatter plot chart with random values without 0 and 100
@@ -48,3 +49,28 @@ multiseries_scatter_chart(
     tooltip=True,
     exportpath='./example.html'
 )
+
+## Graphviz example
+
+graph = Graph(
+    vertices=['a', 'b', 'c', 'd', 'e', 'f'], 
+    edges=[['a', 'b'], ['b', 'c'], ['a', 'c'], ['d', 'c'], ['e', 'c'], ['e', 'a']],
+    directed=True
+)
+
+graph_chart(graph, exportpath='./example.html')
+
+graph = '''
+digraph D {
+
+  A [shape=diamond]
+  B [shape=box]
+  C [shape=circle]
+
+  A -> B [style=dashed, color=grey]
+  A -> C [color="black:invis:black"]
+  A -> D [penwidth=5, arrowhead=none]
+
+}
+'''
+graph_chart(graph, exportpath='./example.html')

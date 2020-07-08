@@ -1,4 +1,5 @@
-from pyd3charts.globals import JINJA_DEPENDENCIES, BASE_TEMPLATE, SCATTER, MULTISERIES_SCATTER
+from pyd3charts.globals import JINJA_DEPENDENCIES, BASE_TEMPLATE, SCATTER, MULTISERIES_SCATTER, GRAPH
+from pyd3charts.graphs import Graph
 import jinja2
 import webview
 
@@ -58,3 +59,19 @@ def multiseries_scatter_chart(data=None, series_names=None, title='', header='',
     render_variables['min_y'] = min_y - (offset if offset is not None else 10)
 
     basic_chart((MULTISERIES_SCATTER, render_variables, 'multiseries_scatter'))
+
+def graph_chart(data=None, exportpath= None):
+    final_data = None
+
+    if not isinstance(data, Graph):
+        if not isinstance(data, str):
+            raise ValueError("data must be a valid Graph object or a string object")
+        else:
+            final_data = data
+    else:        
+        final_data = data.export_to_graphviz()
+
+    render_variables = {key: value for key, value in locals().items() if value is not None}
+    render_variables['data'] = final_data
+
+    basic_chart((GRAPH, render_variables, 'graph'))
